@@ -6,29 +6,39 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
+  let name = document.getElementById("name");
+  let text = document.getElementById("text");
+  let image = document.getElementById("character-image");
   // this are the characters to randomly select from...
   const characters = [
     {
       name: "Mrs. Brown",
       image: "https://randomuser.me/api/portraits/women/17.jpg",
-      description: "loves to read about history and philosophy",
+      description: "loves to read about history and philosophy"
     },
     {
       name: "Andrew",
       image: "https://randomuser.me/api/portraits/men/25.jpg",
-      description: "tall, a real state agent",
+      description: "tall, a real state agent"
     },
     {
       name: "Sam",
       image: "https://randomuser.me/api/portraits/men/52.jpg",
-      description: "short, vice president of AT&T sales",
+      description: "short, vice president of AT&T sales"
     },
     {
       name: "Margie",
       image: "https://randomuser.me/api/portraits/women/42.jpg",
-      description: "short, works as a designer for some company",
-    },
+      description: "short, works as a designer for some company"
+    }
   ];
+
+  let rancCharacters = Math.floor(Math.random() * characters.length);
+  console.log(characters[rancCharacters]);
+
+  name.textContent = characters[rancCharacters].name;
+  text.textContent = characters[rancCharacters].description;
+  image.src = characters[rancCharacters].image;
 
   // INSTRUCTIONS
   // randomly choose a character and then update using JS:
